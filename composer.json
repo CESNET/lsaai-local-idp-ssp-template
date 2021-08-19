@@ -1,5 +1,5 @@
 {
-    "name": "bbmri/simplesamlphp-module-lshostel",
+    "name": "lsaai/simplesamlphp-module-lsaai",
     "description": "A SimpleSAMLphp module providing template for DiscoPower and user-facing parts of the SSP for LifeScience Hostel",
     "type": "simplesamlphp-module",
     "keywords": ["bbmri", "bbmri-eric", "lifescience hostel","simplesamlphp"],
