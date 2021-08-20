@@ -93,8 +93,8 @@ if ($this->isLanguageRTL()) {
 <?php	
 }
 ?>
-    <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/bootstrap/css/bootstrap.min.css'); ?>" />
-    <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/css/lshostel.css'); ?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lsaai/res/bootstrap/css/bootstrap.min.css'); ?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lsaai/res/css/lsaai.css'); ?>" />
 	<meta name="robots" content="noindex, nofollow" />
 	
 
@@ -122,7 +122,7 @@ if($onLoad !== '') {
 <div id="wrap">
 	
 	<div id="header">
-        <img src="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/img/lshostel_256.png'); ?>" alt="Life Science Hostel logo">
+        <img src="<?php echo SimpleSAML\Module::getModuleUrl('lsaai/res/img/ls_logo.png'); ?>" alt="Life Science Hostel logo">
 		<h1>
 		<?php 
 			echo (isset($this->data['header']) ? $this->data['header'] : 'Life Science Hostel');

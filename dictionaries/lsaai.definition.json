@@ -1,0 +1,26 @@
+{
+  "error_report_email_message": {
+    "en": "Please provide your mail so that we can contact you for further information or let you know the issue was fixed."
+  },
+  "user_pass_header": {
+    "en": "Life Science Hostel Login"
+  },
+  "user_pass_text": {
+    "en": "Enter your email and password"
+  },
+  "register_acc_hostel": {
+    "en": "Sign up"
+  },
+  "email": {
+    "en": "Email"
+  },
+  "forgot_password": {
+    "en": "Forgotten password"
+  },
+  "title_WRONGUSERPASS": {
+    "en": "Incorrect email or password"
+  },
+  "descr_WRONGUSERPASS": {
+    "en": "Either no user with this email could be found, or the password you gave was wrong. Please check the email and try again."
+  }
+}

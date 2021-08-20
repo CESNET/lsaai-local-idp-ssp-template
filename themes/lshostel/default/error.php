@@ -6,8 +6,8 @@ $this->data['head'] = <<<EOF
 <meta name="googlebot" content="noarchive, nofollow" />
 EOF;
 
-$this->data['head'] .= '<script src="' . SimpleSAML\Module::getModuleUrl('lshostel/res/js/jquery.js')  . '" ></script>';
-$this->data['head'] .= '<script src="' . SimpleSAML\Module::getModuleUrl('lshostel/res/bootstrap/js/bootstrap.min.js')  . '" ></script>';
+$this->data['head'] .= '<script src="' . SimpleSAML\Module::getModuleUrl('lsaai/res/js/jquery.js')  . '" ></script>';
+$this->data['head'] .= '<script src="' . SimpleSAML\Module::getModuleUrl('lsaai/res/bootstrap/js/bootstrap.min.js')  . '" ></script>';
 
 $this->includeAtTemplateBase('includes/header.php');
 ?>
@@ -65,7 +65,7 @@ if (isset($this->data['errorReportAddress'])) {
 		<label class="col-sm-2 control-label" for="email"><?php echo $this->t('report_email'); ?></label>
 		<div class="col-sm-10">
 			<input name="email" type="email" class="form-control" id="email" placeholder="Email" required>
-			<span  class="help-block"><?php echo $this->t('{lshostel:lshostel:error_report_email_message}');?></span>
+			<span  class="help-block"><?php echo $this->t('{lsaai:lsaai:error_report_email_message}');?></span>
 		</div>
 	</div>
 

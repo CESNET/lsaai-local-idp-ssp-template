@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleSAML\Module\lshostel\Auth\Process;
+namespace SimpleSAML\Module\lsaai\Auth\Process;
 
 use SimpleSAML\Auth\ProcessingFilter;
 use SimpleSAML\Error\Exception;
@@ -29,7 +29,7 @@ class LoginModify extends ProcessingFilter
 
 		if (!isset($config['loginAttrName'])) {
 			throw new Exception(
-				"lshostel:LoginModify missing mandatory configuration option 'loginAttrName'."
+				"lsaai:LoginModify missing mandatory configuration option 'loginAttrName'."
 			);
 		}
 
@@ -47,7 +47,7 @@ class LoginModify extends ProcessingFilter
 		$userName = $userNameParts[0] . '_' . strtolower($userNameParts[1]);
 
 		$request['Attributes'][$this->loginAttrName][0] = $userName;
-		Logger::debug("lshostel:LoginModify - Modified " . $oldUserName . " to new format " . $userName);
+		Logger::debug("lsaai:LoginModify - Modified " . $oldUserName . " to new format " . $userName);
 	}
 
 }
