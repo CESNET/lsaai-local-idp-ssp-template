@@ -2,7 +2,7 @@
 
 use SimpleSAML\Configuration;
 
-const CONFIG_FILE_NAME = 'module_lshostel.php';
+const CONFIG_FILE_NAME = 'module_lsaai.php';
 const REGISTER_LINK = 'register_link';
 
 $conf = Configuration::getConfig(CONFIG_FILE_NAME);
@@ -67,8 +67,8 @@ header('X-Frame-Options: SAMEORIGIN');
     }
     ?>
 
-    <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/bootstrap/css/bootstrap.min.css'); ?>" />
-    <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/css/lshostel.css'); ?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lsaai/res/bootstrap/css/bootstrap.min.css'); ?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML\Module::getModuleUrl('lsaai/res/css/lsaai.css'); ?>" />
 
     <meta name="robots" content="noindex, nofollow" />
 
@@ -96,18 +96,18 @@ if($onLoad !== '') {
 
 <div id="wrap">
 
-    <div id="content">
+    <div id="content" class="content<?php if ($this->data['errorcode'] !== null) {echo ' content-error';} ?>">
         <div class="row pl-0 pr-0">
-            <div class="col-sm-6 logo-wrap col-align--center">
-                <img src="<?php echo SimpleSAML\Module::getModuleUrl('lshostel/res/img/lshostel_256.png'); ?>" alt="Life Science Hostel logo">
+            <div class="col-md-6 col-md-offset-3 logo-wrap">
+                <img src="<?php echo SimpleSAML\Module::getModuleUrl('lsaai/res/img/ls_logo.png'); ?>" alt="Life Science Hostel logo">
             </div>
-            <div class="col-sm-6">
+            <div class="col-md-6 col-md-offset-3">
                 <h1>
                     <?php
-                    echo $this->t('{lshostel:lshostel:user_pass_header}');
+                    echo $this->t('{lsaai:lsaai:user_pass_header}');
                     ?>
                 </h1>
-                <p><?php echo $this->t('{lshostel:lshostel:user_pass_text}'); ?></p>
+                <p><?php echo $this->t('{lsaai:lsaai:user_pass_text}'); ?></p>
                 <br>
 
                 <?php
@@ -124,7 +124,7 @@ if($onLoad !== '') {
                                 <strong>
                                     <?php
                                     echo htmlspecialchars($this->t(
-                                        '{lshostel:lshostel:title_WRONGUSERPASS}',
+                                        '{lsaai:lsaai:title_WRONGUSERPASS}',
                                         $this->data['errorparams']
                                     ));
                                     ?>
@@ -133,7 +133,7 @@ if($onLoad !== '') {
                             <p>
                                 <?php
                                 echo htmlspecialchars($this->t(
-                                    '{lshostel:lshostel:descr_WRONGUSERPASS}',
+                                    '{lsaai:lsaai:descr_WRONGUSERPASS}',
                                     $this->data['errorparams']
                                 ));
                                 ?>
@@ -161,7 +161,9 @@ if($onLoad !== '') {
                             <?php
                             }
                             ?>
-
+                        <a class="btn btn-link" href="<?php echo SimpleSAML\Module::getModuleURL("lsaai/pwd_reset.php");?>">
+                            <?php echo $this->t('{lsaai:lsaai:forgot_password}') ?>
+                        </a>
                     </div>
                     <?php
 
@@ -171,10 +173,12 @@ if($onLoad !== '') {
 
                 <form action="?" method="post" name="f" class="form-horizontal">
                     <div class="form-group">
-                        <label class="sr-only" for="inlineFormInputGroup"><?php echo $this->t('{lshostel:lshostel:email}'); ?></label>
+                        <label class="sr-only" for="inlineFormInputGroup"><?php echo $this->t('{lsaai:lsaai:username}'); ?></label>
                         <div class="input-group mb-2">
-                            <span class="input-group-addon" id="basic-addon1">@</span>
-                            <input id="username" type="email" name="username" class="form-control" value="<?php echo htmlspecialchars($this->data['username']); ?>" placeholder="Email" aria-describedby="basic-addon1"/>
+                            <span class="input-group-addon" >
+                                    <span class=" glyphicon glyphicon-user" id="basic-addon1"></span>
+                            </span>
+                            <input id="username" name="username" class="form-control" value="<?php echo htmlspecialchars($this->data['username']); ?>" placeholder="Username" aria-describedby="basic-addon1"/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -193,12 +197,12 @@ if($onLoad !== '') {
                     </div>
                     <div class="form-group text-center">
                         <a class="btn btn-link" href="<?php echo $register_link ?>">
-                            <?php echo $this->t('{lshostel:lshostel:register_acc_hostel}') ?>
+                            <?php echo $this->t('{lsaai:lsaai:register_acc_hostel}') ?>
                         </a>
-                         |
-                        <a class="btn btn-link" href="<?php echo SimpleSAML\Module::getModuleURL("lshostel/pwd_reset.php");?>">
-                            <?php echo $this->t('{lshostel:lshostel:forgot_password}') ?>
-                        </a>
+<!--                         |-->
+<!--                        <a class="btn btn-link" href="--><?php //echo SimpleSAML\Module::getModuleURL("lsaai/pwd_reset.php");?><!--">-->
+<!--                            --><?php //echo $this->t('{lsaai:lsaai:forgot_password}') ?>
+<!--                        </a>-->
                     </div>
                     <?php
                     foreach ($this->data['stateparams'] as $name => $value) {

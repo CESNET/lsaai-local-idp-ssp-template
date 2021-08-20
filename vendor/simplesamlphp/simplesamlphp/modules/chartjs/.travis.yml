@@ -1,0 +1,21 @@
+language: generic
+git:
+  quiet: true
+  submodules: false
+script:
+- git checkout master
+- rm -rf www && mkdir www && cd www
+- wget --quiet https://github.com/chartjs/Chart.js/releases/latest/download/Chart.bundle.min.js
+- wget --quiet https://github.com/chartjs/Chart.js/releases/latest/download/Chart.min.css
+- wget --quiet https://github.com/chartjs/Chart.js/releases/latest/download/Chart.min.js
+- wget --quiet https://github.com/chartjs/chartjs-plugin-zoom/releases/latest/download/chartjs-plugin-zoom.min.js
+- wget --quiet https://raw.githubusercontent.com/moment/moment/master/min/locales.min.js
+- wget --quiet https://raw.githubusercontent.com/moment/moment/master/min/moment-with-locales.min.js
+- wget --quiet https://raw.githubusercontent.com/moment/moment/master/min/moment.min.js
+- wget --quiet -O moment.cs.js https://raw.githubusercontent.com/moment/moment/master/locale/cs.js
+- cd ..
+after_success:
+- ./push.sh
+env:
+  global:
+    secure: FfdUM8jvtD8Ia7lh3I8pYmmGphyYg0rkucP60xO6wko2BqdkwB6toxUBsNdfIJAG/rgBWw0lMOwoXPEQohxSlUvS9Em9TyXeRsYBthK5JiqoJ69omiQ04oue1FiqDNHAsNwZiCsn5u5hoAHuB0DcW+jfBAqptizxN+PVXbjByUjNZKGgDUWw/LxqsmfW8fjnFdQBGZrNDmcHK3MnNjiqYyvyD2ICbcMAn6xoilV9jpFk/el9XWoCOwkFvY1AKN2pljuKgp8nHfq0Ymg6sNSP3EpAWgWfcYH4wKstvXg3WwnHARPPRwOtnTVTxEN8a3ssiOW1i21Jr81G6Sj6u5VG+nCg+I7nlovs7JSkaH4K1by8GHQZY2ge6aWy2tuNkhFowONRavxj2aDw7wIZ4OUefi54IjCRIHLEIEBze30Cx4Ki+HQWR4TzzF33adWW2xFho3O8pLkKfkPV9ul86h3rEO+3BXWaRB8c5dxseNRURKPdqHa6DEZ0oSd2iRDkDN0NqOHFJMvbwCCELV1UQixj+IfiK8JTxiOogcrHBIVeH4ulWHYHlmBJrVPx9lJNZOaKZr7rIlXHyuNnsEV01c2QVxb8nKhotlIK5zUe9EO6XtfM7GMoiNdxSI/ZU5QDkDrlYMlfUcXCPU3eMLWrXugwYhjRHHFifEmHUioWBgWUOk4=

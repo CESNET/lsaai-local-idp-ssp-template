@@ -1,0 +1,15 @@
+{
+    "name": "cesnet/simplesamlphp-module-chartjs",
+    "description": "A SimpleSAMLphp module that includes the Chart.js Javascript library.",
+    "type": "simplesamlphp-module",
+    "keywords": [ "simplesamlphp", "chartjs", "javascript" ],
+    "authors": [
+        {
+            "name": "Pavel Brousek",
+            "email": "433364@muni.cz"
+        }
+    ],
+    "require": {
+        "simplesamlphp/composer-module-installer": "~1.1.6"
+    }
+}

@@ -1,0 +1,98 @@
+{
+  "choose-vo-and-group-tpl_header-part1": {
+    "en": "Access to the service ",
+    "cs": "Přístup ke službě "
+  },
+  "choose-vo-and-group-tpl_header-part2": {
+    "en": " has been forbidden",
+    "cs": " byl zamítnut"
+  },
+  "choose-vo-and-group-tpl_message": {
+    "en": "To access the service it is necessary to have a valid membership in one of the following groups. Please proceed with selection of organization and group for registration.",
+    "cs": "Pro získání přístupu k dané službě je nutné být členem jedné z následujících skupin. Pokračujte výběrem příslušné organizace a skupiny."
+  },
+  "choose-vo-and-group-tpl_select-vo": {
+	"en": "Select virtual organization for registration: ",
+	"cs": "Vyberte virtuální organizaci: "
+  },
+  "choose-vo-and-group-tpl_select-group": {
+    "en": "Select group for registration: ",
+    "cs": "Vyberte skupinu pro registraci: "
+  },
+  "choose-vo-and-group-tpl_continue": {
+    "en": "Continue to the registration page for selected group",
+    "cs": "Pokračovat na registrační stránku do vybrané skupiny"
+  },
+  "go-to-registration_header1" : {
+    "en": "Your activity is necessary to access the ",
+    "cs": "Pro přístup ke službě "
+  },
+  "go-to-registration_header2" : {
+    "en": " service",
+    "cs": " je vyžadována Vaše aktivita"
+  },
+  "go-to-registration_continue" : {
+    "en": "Continue to a page with additional information",
+    "cs": "Pokračovat na stránku s doplňujícími informacemi"
+  },
+  "disco-tpl_previous-selection": {
+	"en": "your previous selection",
+	"cs": "vaše předchozí volba"
+  },
+  "disco-tpl_institutional-account": {
+	"en": "your institutional account",
+	"cs": "váš univerzitní účet"
+  },
+  "dico-tpl_or": {
+	"en": "or",
+	"cs": "nebo"
+  },
+  "force-aup-tpl_aup": {
+	"en": "Acceptable usage policy",
+	"cs": "Podmínky užití"
+  },
+  "force-aup-tpl_aup_organization": {
+    "en": "Acceptable usage policy for organization ",
+    "cs": "Podmínky užití služeb v organizaci "
+  },
+  "force-aup-tpl_aup_redirect": {
+    "en": "See the acceptable usage policy in version ",
+    "cs": "Podmínky užití ve verzi "
+  },
+  "force-aup-tpl_aup_accept": {
+    "en": "You must agree to the following acceptable usage policies: ",
+    "cs": "Musíte souhlasit s následujícími podmínkami užití: "
+  },
+  "force-aup-tpl_agree": {
+	"en": "I agree with the acceptable usage policy",
+	"cs": "Souhlasím s podmínkami užití"
+  },
+  "warning-test-sp-tpl_text": {
+	"en": "You are about to access service, which is in testing environment.",
+	"cs": "Přistupujete ke službě, která je v testovacím režimu. "
+  },
+  "continue": {
+	"en": "Continue",
+	"cs": "Pokračovat"
+  },
+  "here": {
+    "en": "here.",
+    "cs": "zde."
+  },
+  "organization": {
+    "en": "Organization / Virtual Organization ",
+    "cs": "Organizace / Virtuální organizace "
+  },
+  "unsupported_redirection": {
+    "en": "Unsupported redirection",
+    "cs": "Nepodporované přesměrování"
+  },
+  "go_back": {
+    "en": "Go back to ",
+    "cs": "Vraťte se zpět na "
+  },
+  "unauthorized-access_redirect_to_registration": {
+    "en": "Now you will be redirected to registration to Perun system.",
+    "cs": "Nyní budete přesměrování na registraci do systému Perun."
+  }
+}

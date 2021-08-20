@@ -1,0 +1,19 @@
+#head a, #head a:link, #head a:visited{
+    color: #005b99 !important;
+}
+
+#head a:hover {
+    border-bottom: 1px #005b99 solid !important;
+}
+
+#content, #languagebar {
+    max-width: 960px !important;
+}
+
+.msg {
+    padding-top: 30px;
+}
+
+#cont-btn {
+    color: white !important;
+}
