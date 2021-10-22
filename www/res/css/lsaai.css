@@ -1,12 +1,19 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+
 body {
 	padding-top: 0;
 }
+
 .ui-widget-content {
 	border: 0 solid #ddd;
 }
 
 #header {
 	background: transparent;
+	padding-top: 40px;
 }
 
 #header h1 {
@@ -71,7 +78,6 @@ hr {
 }
 
 #footer {
-	margin-top: 0;
 	border-top: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
 	text-align: left;
@@ -84,6 +90,10 @@ hr {
 	left: 0;
 	right: 0;
 	bottom: 0;
+}
+
+#wrap_footer {
+	padding-top: 120px;
 }
 
 #footer img {
