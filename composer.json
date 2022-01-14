@@ -7,12 +7,24 @@
     "authors": [
         {
             "name": "Pavel Vyskocil",
-            "email": "vyskocilpavel@muni.cz"
+            "email": "Pavel.Vyskocil@cesnet.cz"
+        },
+        {
+            "name": "Dominik Frantisek Bucik",
+            "email": "bucik@ics.muni.cz"
         }
     ],
     "require": {
         "simplesamlphp/composer-module-installer": "~1.0",
         "simplesamlphp/simplesamlphp": "~1.17",
         "cesnet/simplesamlphp-module-perun": "~6.0"
+    },
+    "require-dev": {
+        "symplify/easy-coding-standard": "^10.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "simplesamlphp/composer-module-installer": true
+        }
     }
 }

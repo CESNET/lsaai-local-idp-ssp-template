@@ -1,8 +1,9 @@
-<?php
-if(!empty($this->data['htmlinject']['htmlContentPost'])) {
-	foreach($this->data['htmlinject']['htmlContentPost'] AS $c) {
-		echo $c;
-	}
+<?php declare(strict_types=1);
+
+if (!empty($this->data['htmlinject']['htmlContentPost'])) {
+    foreach ($this->data['htmlinject']['htmlContentPost'] as $c) {
+        echo $c;
+    }
 }
 ?>
 </div>

@@ -1,8 +1,6 @@
 <?php
-/**
- * @author Pavel Vyskocil <vyskocilpavel@muni.cz>
- */
 
+declare(strict_types=1);
 
 use SimpleSAML\Configuration;
 use SimpleSAML\Error\Exception;
@@ -26,8 +24,8 @@ $config = Configuration::getInstance();
 $t = new Template($config, 'lsaai:pwd_reset-tpl.php');
 $t->show();
 
-
-function sendPasswordResetEmail($userName) {
+function sendPasswordResetEmail($userName)
+{
     $rpcAdapter = new AdapterRpc();
 
     $conf = Configuration::getConfig(CONFIG_FILE_NAME);
@@ -53,8 +51,8 @@ function sendPasswordResetEmail($userName) {
     } catch (Exception $ex) {
         throw new Exception($ex);
     }
-    if (is_null($user )){
-        throw new Exception("There are no LifeScience Hostel user with username: " . $userName);
+    if (null === $user) {
+        throw new Exception('There are no LifeScience Hostel user with username: ' . $userName);
     }
 
     $vo = $rpcAdapter->getVoByShortName($voShortName);
@@ -62,16 +60,17 @@ function sendPasswordResetEmail($userName) {
 
     $connector = $rpcAdapter->getConnector();
 
-    $response = $connector->post('membersManager',
+    $response = $connector->post(
+        'membersManager',
         'sendPasswordResetLinkEmail',
         [
             'member' => $member->getId(),
             'namespace' => $perunNamespace,
             'url' => $perunUrl,
             'emailAttributeURN' => $emailAttr,
-            'language' => LANG_EN
-        ]);
+            'language' => LANG_EN,
+        ]
+    );
 
     Logger::debug(print_r($response, true));
-
 }

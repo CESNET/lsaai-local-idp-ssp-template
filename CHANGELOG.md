@@ -1,7 +1,4 @@
-# Change Log
-All notable changes to this project will be documented in this file.
-
-## [Unreleased]
+# [v2.0.0](https://github.com/CESNET/lsaai-local-idp-ssp-template/compare/v1.3.0...v2.0.0)
 
 ## [v1.3.0]
 #### Changed
@@ -25,8 +22,7 @@ All notable changes to this project will be documented in this file.
 ## [v1.0.0]
 - First release
  
-[Unreleased]: https://github.com/CESNET/lsaai-aai-proxy-idp-template/tree/master
-[v1.3.0]: https://github.com/CESNET/lsaai-aai-proxy-idp-template/tree/v1.3.0
-[v1.2.0]: https://github.com/CESNET/lsaai-aai-proxy-idp-template/tree/v1.2.0
-[v1.1.0]: https://github.com/CESNET/lsaai-aai-proxy-idp-template/tree/v1.1.0
-[v1.0.0]: https://github.com/CESNET/lsaai-aai-proxy-idp-template/tree/v1.0.0
+[v1.3.0]: https://github.com/CESNET/lsaai-local-idp-ssp-template/tree/v1.3.0
+[v1.2.0]: https://github.com/CESNET/lsaai-local-idp-ssp-template/tree/v1.2.0
+[v1.1.0]: https://github.com/CESNET/lsaai-local-idp-ssp-template/tree/v1.1.0
+[v1.0.0]: https://github.com/CESNET/lsaai-local-idp-ssp-template/tree/v1.0.0
