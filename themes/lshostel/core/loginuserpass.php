@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 use SimpleSAML\Configuration;
 
@@ -9,33 +9,33 @@ $conf = Configuration::getConfig(CONFIG_FILE_NAME);
 $register_link = $conf->getString(REGISTER_LINK);
 
 if (strlen($this->data['username']) > 0) {
-	$this->data['autofocus'] = 'password';
+    $this->data['autofocus'] = 'password';
 } else {
-	$this->data['autofocus'] = 'username';
+    $this->data['autofocus'] = 'username';
 }
 
-
-/**
+/*
  * Support the htmlinject hook, which allows modules to change header, pre and post body on all pages.
  */
-$this->data['htmlinject'] = array(
-    'htmlContentPre' => array(),
-    'htmlContentPost' => array(),
-    'htmlContentHead' => array(),
-);
+$this->data['htmlinject'] = [
+    'htmlContentPre' => [],
+    'htmlContentPost' => [],
+    'htmlContentHead' => [],
+];
 
-
-$jquery = array();
-if (array_key_exists('jquery', $this->data)) $jquery = $this->data['jquery'];
+$jquery = [];
+if (array_key_exists('jquery', $this->data)) {
+    $jquery = $this->data['jquery'];
+}
 
 if (array_key_exists('pageid', $this->data)) {
-    $hookinfo = array(
+    $hookinfo = [
         'pre' => &$this->data['htmlinject']['htmlContentPre'],
         'post' => &$this->data['htmlinject']['htmlContentPost'],
         'head' => &$this->data['htmlinject']['htmlContentHead'],
         'jquery' => &$jquery,
-        'page' => $this->data['pageid']
-    );
+        'page' => $this->data['pageid'],
+    ];
 
     SimpleSAML\Module::callHooks('htmlinject', $hookinfo);
 }
@@ -54,8 +54,8 @@ header('X-Frame-Options: SAMEORIGIN');
     <link rel="icon" type="image/icon" href="/<?php echo $this->data['baseurlpath']; ?>resources/icons/favicon.ico" />
     <?php
 
-    if(!empty($this->data['htmlinject']['htmlContentHead'])) {
-        foreach($this->data['htmlinject']['htmlContentHead'] AS $c) {
+    if (!empty($this->data['htmlinject']['htmlContentHead'])) {
+        foreach ($this->data['htmlinject']['htmlContentHead'] as $c) {
             echo $c;
         }
     }
@@ -74,21 +74,21 @@ header('X-Frame-Options: SAMEORIGIN');
 
 
     <?php
-    if(array_key_exists('head', $this->data)) {
+    if (array_key_exists('head', $this->data)) {
         echo '<!-- head -->' . $this->data['head'] . '<!-- /head -->';
     }
     ?>
 </head>
 <?php
 $onLoad = '';
-if(array_key_exists('autofocus', $this->data)) {
+if (array_key_exists('autofocus', $this->data)) {
     $onLoad .= 'SimpleSAML_focus(\'' . $this->data['autofocus'] . '\');';
 }
 if (isset($this->data['onLoad'])) {
     $onLoad .= $this->data['onLoad'];
 }
 
-if($onLoad !== '') {
+if ('' !== $onLoad) {
     $onLoad = ' onload="' . $onLoad . '"';
 }
 ?>
@@ -96,7 +96,9 @@ if($onLoad !== '') {
 
 <div id="wrap">
 
-    <div id="content" class="content<?php if ($this->data['errorcode'] !== null) {echo ' content-error';} ?>">
+    <div id="content" class="content<?php if (null !== $this->data['errorcode']) {
+    echo ' content-error';
+} ?>">
         <div class="row pl-0 pr-0">
             <div class="col-md-6 col-md-offset-3 logo-wrap">
                 <img src="<?php echo SimpleSAML\Module::getModuleUrl('lsaai/res/img/ls_logo.png'); ?>" alt="Life Science Hostel logo">
@@ -111,23 +113,21 @@ if($onLoad !== '') {
                 <br>
 
                 <?php
-                if ($this->data['errorcode'] !== null) {
-
+                if (null !== $this->data['errorcode']) {
                     ?>
                     <div class="alert alert-danger" >
                         <p>
                             <span class="glyphicon glyphicon-exclamation-sign" style="float:left; font-size: 38px; margin-right: 10px;"></span>
 
                             <?php
-                            if ($this->data['errorcode'] === 'WRONGUSERPASS') {
+                            if ('WRONGUSERPASS' === $this->data['errorcode']) {
                                 ?>
                                 <strong>
                                     <?php
                                     echo htmlspecialchars($this->t(
-                                        '{lsaai:lsaai:title_WRONGUSERPASS}',
-                                        $this->data['errorparams']
-                                    ));
-                                    ?>
+                                    '{lsaai:lsaai:title_WRONGUSERPASS}',
+                                    $this->data['errorparams']
+                                )); ?>
                                 </strong>
                             </p>
                             <p>
@@ -135,8 +135,7 @@ if($onLoad !== '') {
                                 echo htmlspecialchars($this->t(
                                     '{lsaai:lsaai:descr_WRONGUSERPASS}',
                                     $this->data['errorparams']
-                                ));
-                                ?>
+                                )); ?>
                             </p>
                         <?php
                             } else {
@@ -144,29 +143,25 @@ if($onLoad !== '') {
                                 <strong>
                                     <?php
                                     echo htmlspecialchars($this->t(
-                                        '{errors:title_' . $this->data['errorcode'] . '}',
-                                        $this->data['errorparams']
-                                    ));
-                                    ?>
+                                    '{errors:title_' . $this->data['errorcode'] . '}',
+                                    $this->data['errorparams']
+                                )); ?>
                                 </strong>
                                 </p>
                                 <p>
                                     <?php
                                     echo htmlspecialchars($this->t(
-                                        '{errors:descr_' . $this->data['errorcode'] . '}',
-                                        $this->data['errorparams']
-                                    ));
-                                    ?>
+                                    '{errors:descr_' . $this->data['errorcode'] . '}',
+                                    $this->data['errorparams']
+                                )); ?>
                                 </p>
                             <?php
-                            }
-                            ?>
-                        <a class="btn btn-link" href="<?php echo SimpleSAML\Module::getModuleURL("lsaai/pwd_reset.php");?>">
-                            <?php echo $this->t('{lsaai:lsaai:forgot_password}') ?>
+                            } ?>
+                        <a class="btn btn-link" href="<?php echo SimpleSAML\Module::getModuleURL('lsaai/pwd_reset.php'); ?>">
+                            <?php echo $this->t('{lsaai:lsaai:forgot_password}'); ?>
                         </a>
                     </div>
                     <?php
-
                 }
 
                 ?>
@@ -196,17 +191,19 @@ if($onLoad !== '') {
                         </button>
                     </div>
                     <div class="form-group text-center">
-                        <a class="btn btn-link" href="<?php echo $register_link ?>">
-                            <?php echo $this->t('{lsaai:lsaai:register_acc_hostel}') ?>
+                        <a class="btn btn-link" href="<?php echo $register_link; ?>">
+                            <?php echo $this->t('{lsaai:lsaai:register_acc_hostel}'); ?>
                         </a>
 <!--                         |-->
 <!--                        <a class="btn btn-link" href="--><?php //echo SimpleSAML\Module::getModuleURL("lsaai/pwd_reset.php");?><!--">-->
-<!--                            --><?php //echo $this->t('{lsaai:lsaai:forgot_password}') ?>
+<!--                            --><?php //echo $this->t('{lsaai:lsaai:forgot_password}')?>
 <!--                        </a>-->
                     </div>
                     <?php
                     foreach ($this->data['stateparams'] as $name => $value) {
-                        echo('<input type="hidden" name="' . htmlspecialchars($name) . '" value="' . htmlspecialchars($value) . '" />');
+                        echo '<input type="hidden" name="' . htmlspecialchars($name) . '" value="' . htmlspecialchars(
+                            $value
+                        ) . '" />';
                     }
                     ?>
                 </form>
@@ -214,11 +211,10 @@ if($onLoad !== '') {
             </div>
             <?php
 
-        if(!empty($this->data['htmlinject']['htmlContentPre'])) {
-            foreach($this->data['htmlinject']['htmlContentPre'] AS $c) {
+        if (!empty($this->data['htmlinject']['htmlContentPre'])) {
+            foreach ($this->data['htmlinject']['htmlContentPre'] as $c) {
                 echo $c;
             }
         }
-
 
 $this->includeAtTemplateBase('includes/footer.php');
