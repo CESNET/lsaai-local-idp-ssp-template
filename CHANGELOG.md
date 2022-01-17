@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/CESNET/lsaai-local-idp-ssp-template/compare/v3.0.0...v3.1.0) (2022-01-17)
+
+
+### Features
+
+* 🎸 New logo ([6db7c0f](https://github.com/CESNET/lsaai-local-idp-ssp-template/commit/6db7c0fa182f21b24a98f849d5b2d27ecf3e9a91))
+
 # [v2.0.0](https://github.com/CESNET/lsaai-local-idp-ssp-template/compare/v1.3.0...v2.0.0)
 
 ## [v1.3.0]
