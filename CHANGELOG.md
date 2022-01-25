@@ -1,3 +1,10 @@
+## [3.1.1](https://github.com/CESNET/lsaai-local-idp-ssp-template/compare/v3.1.0...v3.1.1) (2022-01-25)
+
+
+### Bug Fixes
+
+* change required version of perun module ([265bc98](https://github.com/CESNET/lsaai-local-idp-ssp-template/commit/265bc984b961c97a20c6766911718af26e7e838c))
+
 # [3.1.0](https://github.com/CESNET/lsaai-local-idp-ssp-template/compare/v3.0.0...v3.1.0) (2022-01-17)
 
 
